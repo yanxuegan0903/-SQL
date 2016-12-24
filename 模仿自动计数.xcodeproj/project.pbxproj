@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5374647F4CB12DDBC6B47C3D /* Pods_______UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D64D09A29668B8F364B200 /* Pods_______UITests.framework */; };
+		976EF425C02D53A5A54DBE2A /* Pods_______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137D6E2086FFEEAADE0FD526 /* Pods_______.framework */; };
 		A7D492D71E0D158E0093CE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492D61E0D158E0093CE95 /* AppDelegate.swift */; };
 		A7D492D91E0D158E0093CE95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492D81E0D158E0093CE95 /* ViewController.swift */; };
 		A7D492DC1E0D158E0093CE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D492DA1E0D158E0093CE95 /* Main.storyboard */; };
@@ -14,6 +16,9 @@
 		A7D492E11E0D158E0093CE95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D492DF1E0D158E0093CE95 /* LaunchScreen.storyboard */; };
 		A7D492EC1E0D158E0093CE95 /* ______Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492EB1E0D158E0093CE95 /* ______Tests.swift */; };
 		A7D492F71E0D158E0093CE95 /* ______UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492F61E0D158E0093CE95 /* ______UITests.swift */; };
+		A7D493091E0D1CB50093CE95 /* UIColor+Hex.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */; };
+		A7D4930C1E0D1CD00093CE95 /* NSNumber+GetNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */; };
+		A8338AB10161039A98AB136C /* Pods_______Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49B45C176065AD7657DC2822 /* Pods_______Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		00D64D09A29668B8F364B200 /* Pods_______UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_______UITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		137D6E2086FFEEAADE0FD526 /* Pods_______.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_______.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		26FDFB01781DC7FD741FD795 /* Pods-模仿自动计数Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数Tests/Pods-模仿自动计数Tests.release.xcconfig"; sourceTree = "<group>"; };
+		49B45C176065AD7657DC2822 /* Pods_______Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = "Pods_______Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		5983247EE471229DEC49BC63 /* Pods-模仿自动计数UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数UITests/Pods-模仿自动计数UITests.release.xcconfig"; sourceTree = "<group>"; };
+		5EB213BF5FE69EEB0FF1601B /* Pods-模仿自动计数.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数.release.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数/Pods-模仿自动计数.release.xcconfig"; sourceTree = "<group>"; };
+		86DE7ABB4004F81D279640DF /* Pods-模仿自动计数.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数.debug.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数/Pods-模仿自动计数.debug.xcconfig"; sourceTree = "<group>"; };
 		A7D492D31E0D158E0093CE95 /* 模仿自动计数.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模仿自动计数.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D492D61E0D158E0093CE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D492D81E0D158E0093CE95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +59,14 @@
 		A7D492F21E0D158E0093CE95 /* 模仿自动计数UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "模仿自动计数UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D492F61E0D158E0093CE95 /* ______UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "______UITests.swift"; sourceTree = "<group>"; };
 		A7D492F81E0D158E0093CE95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7D493061E0D1CB50093CE95 /* 模仿自动计数-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "模仿自动计数-Bridging-Header.h"; sourceTree = "<group>"; };
+		A7D493071E0D1CB50093CE95 /* UIColor+Hex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Hex.h"; sourceTree = "<group>"; };
+		A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
+		A7D4930A1E0D1CD00093CE95 /* NSNumber+GetNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+GetNumber.h"; sourceTree = "<group>"; };
+		A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+GetNumber.m"; sourceTree = "<group>"; };
+		A7D4930D1E0D1E410093CE95 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		AE33E8F5A10A20DEDD09C36D /* Pods-模仿自动计数UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数UITests/Pods-模仿自动计数UITests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB8B15328FC57C951E20792F /* Pods-模仿自动计数Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数Tests/Pods-模仿自动计数Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				976EF425C02D53A5A54DBE2A /* Pods_______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A8338AB10161039A98AB136C /* Pods_______Tests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +90,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5374647F4CB12DDBC6B47C3D /* Pods_______UITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9A12249820E9EBE7E74C4312 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				86DE7ABB4004F81D279640DF /* Pods-模仿自动计数.debug.xcconfig */,
+				5EB213BF5FE69EEB0FF1601B /* Pods-模仿自动计数.release.xcconfig */,
+				DB8B15328FC57C951E20792F /* Pods-模仿自动计数Tests.debug.xcconfig */,
+				26FDFB01781DC7FD741FD795 /* Pods-模仿自动计数Tests.release.xcconfig */,
+				AE33E8F5A10A20DEDD09C36D /* Pods-模仿自动计数UITests.debug.xcconfig */,
+				5983247EE471229DEC49BC63 /* Pods-模仿自动计数UITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		A7D492CA1E0D158E0093CE95 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +117,8 @@
 				A7D492EA1E0D158E0093CE95 /* 模仿自动计数Tests */,
 				A7D492F51E0D158E0093CE95 /* 模仿自动计数UITests */,
 				A7D492D41E0D158E0093CE95 /* Products */,
+				9A12249820E9EBE7E74C4312 /* Pods */,
+				C249F00956D10AE6F4B7E38C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +141,12 @@
 				A7D492DD1E0D158E0093CE95 /* Assets.xcassets */,
 				A7D492DF1E0D158E0093CE95 /* LaunchScreen.storyboard */,
 				A7D492E21E0D158E0093CE95 /* Info.plist */,
+				A7D493071E0D1CB50093CE95 /* UIColor+Hex.h */,
+				A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */,
+				A7D4930A1E0D1CD00093CE95 /* NSNumber+GetNumber.h */,
+				A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */,
+				A7D4930D1E0D1E410093CE95 /* PrefixHeader.pch */,
+				A7D493061E0D1CB50093CE95 /* 模仿自动计数-Bridging-Header.h */,
 			);
 			path = "模仿自动计数";
 			sourceTree = "<group>";
@@ -125,6 +169,16 @@
 			path = "模仿自动计数UITests";
 			sourceTree = "<group>";
 		};
+		C249F00956D10AE6F4B7E38C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				137D6E2086FFEEAADE0FD526 /* Pods_______.framework */,
+				49B45C176065AD7657DC2822 /* Pods_______Tests.framework */,
+				00D64D09A29668B8F364B200 /* Pods_______UITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +186,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D492FB1E0D158E0093CE95 /* Build configuration list for PBXNativeTarget "模仿自动计数" */;
 			buildPhases = (
+				F29663D95379CE19E3892E22 /* [CP] Check Pods Manifest.lock */,
 				A7D492CF1E0D158E0093CE95 /* Sources */,
 				A7D492D01E0D158E0093CE95 /* Frameworks */,
 				A7D492D11E0D158E0093CE95 /* Resources */,
+				313BA820CD82A10C6A5292EB /* [CP] Embed Pods Frameworks */,
+				3A688039994EA9892215DDC1 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -149,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D492FE1E0D158E0093CE95 /* Build configuration list for PBXNativeTarget "模仿自动计数Tests" */;
 			buildPhases = (
+				76236F6909BF60C6FCB3A0F3 /* [CP] Check Pods Manifest.lock */,
 				A7D492E31E0D158E0093CE95 /* Sources */,
 				A7D492E41E0D158E0093CE95 /* Frameworks */,
 				A7D492E51E0D158E0093CE95 /* Resources */,
+				481F5CD2865B56CC7F706841 /* [CP] Embed Pods Frameworks */,
+				3DD9205329B670BBF68E0AA9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -167,9 +227,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A7D493011E0D158E0093CE95 /* Build configuration list for PBXNativeTarget "模仿自动计数UITests" */;
 			buildPhases = (
+				E74E2C2B3B5036758692954E /* [CP] Check Pods Manifest.lock */,
 				A7D492EE1E0D158E0093CE95 /* Sources */,
 				A7D492EF1E0D158E0093CE95 /* Frameworks */,
 				A7D492F01E0D158E0093CE95 /* Resources */,
+				588E73D84882D74BDCDD4E86 /* [CP] Embed Pods Frameworks */,
+				30C8B51FFE647A496E103772 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,6 +257,7 @@
 					A7D492D21E0D158E0093CE95 = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = U54J3QSAHN;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 					A7D492E61E0D158E0093CE95 = {
@@ -257,12 +321,152 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		30C8B51FFE647A496E103772 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-模仿自动计数UITests/Pods-模仿自动计数UITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		313BA820CD82A10C6A5292EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-模仿自动计数/Pods-模仿自动计数-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A688039994EA9892215DDC1 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-模仿自动计数/Pods-模仿自动计数-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3DD9205329B670BBF68E0AA9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-模仿自动计数Tests/Pods-模仿自动计数Tests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		481F5CD2865B56CC7F706841 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-模仿自动计数Tests/Pods-模仿自动计数Tests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		588E73D84882D74BDCDD4E86 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-模仿自动计数UITests/Pods-模仿自动计数UITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76236F6909BF60C6FCB3A0F3 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E74E2C2B3B5036758692954E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F29663D95379CE19E3892E22 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		A7D492CF1E0D158E0093CE95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				A7D492D91E0D158E0093CE95 /* ViewController.swift in Sources */,
+				A7D4930C1E0D1CD00093CE95 /* NSNumber+GetNumber.m in Sources */,
+				A7D493091E0D1CB50093CE95 /* UIColor+Hex.m in Sources */,
 				A7D492D71E0D158E0093CE95 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -413,32 +617,44 @@
 		};
 		A7D492FC1E0D158E0093CE95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 86DE7ABB4004F81D279640DF /* Pods-模仿自动计数.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U54J3QSAHN;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/模仿自动计数/PrefixHeader.pch";
 				INFOPLIST_FILE = "模仿自动计数/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cjl.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "模仿自动计数/模仿自动计数-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
 		A7D492FD1E0D158E0093CE95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5EB213BF5FE69EEB0FF1601B /* Pods-模仿自动计数.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = U54J3QSAHN;
+				GCC_PREFIX_HEADER = "$(SRCROOT)/模仿自动计数/PrefixHeader.pch";
 				INFOPLIST_FILE = "模仿自动计数/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "cjl.------";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "模仿自动计数/模仿自动计数-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Release;
 		};
 		A7D492FF1E0D158E0093CE95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DB8B15328FC57C951E20792F /* Pods-模仿自动计数Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -454,6 +670,7 @@
 		};
 		A7D493001E0D158E0093CE95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 26FDFB01781DC7FD741FD795 /* Pods-模仿自动计数Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -469,6 +686,7 @@
 		};
 		A7D493021E0D158E0093CE95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AE33E8F5A10A20DEDD09C36D /* Pods-模仿自动计数UITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = U54J3QSAHN;
@@ -483,6 +701,7 @@
 		};
 		A7D493031E0D158E0093CE95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5983247EE471229DEC49BC63 /* Pods-模仿自动计数UITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = U54J3QSAHN;
@@ -514,6 +733,7 @@
 				A7D492FD1E0D158E0093CE95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7D492FE1E0D158E0093CE95 /* Build configuration list for PBXNativeTarget "模仿自动计数Tests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +742,7 @@
 				A7D493001E0D158E0093CE95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A7D493011E0D158E0093CE95 /* Build configuration list for PBXNativeTarget "模仿自动计数UITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +751,7 @@
 				A7D493031E0D158E0093CE95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
