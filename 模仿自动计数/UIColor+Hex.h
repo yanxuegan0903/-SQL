@@ -11,4 +11,5 @@
 @interface UIColor (Hex)
 +(UIColor*) colorWithHex:(NSInteger)hexValue alpha:(CGFloat)alphaValue;
 +(UIColor *)colorHaveAlphaWithHex:(NSInteger)hex;
++(UIColor *)colorWithHex:(NSInteger)hex;
 @end

@@ -31,4 +31,15 @@
                            alpha:((hex&0xff000000)>>24) / 255.0f ];
     
 }
+/**
+ *  六位颜色值选用（没有透明度）
+ */
++(UIColor *)colorWithHex:(NSInteger)hex{
+    return [UIColor colorWithRed:((hex&0xff0000)>>16) / 255.0f
+                           green:((hex&0xff00)>>8) / 255.0f
+                            blue:((hex&0xff)>>0) / 255.0f
+                           alpha:1.0f ];
+}
+
+
 @end

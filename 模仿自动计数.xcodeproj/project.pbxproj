@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5374647F4CB12DDBC6B47C3D /* Pods_______UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00D64D09A29668B8F364B200 /* Pods_______UITests.framework */; };
 		976EF425C02D53A5A54DBE2A /* Pods_______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137D6E2086FFEEAADE0FD526 /* Pods_______.framework */; };
+		A7C614C81E0E132300896E77 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C614C71E0E132300896E77 /* Extention.swift */; };
 		A7D492D71E0D158E0093CE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492D61E0D158E0093CE95 /* AppDelegate.swift */; };
 		A7D492D91E0D158E0093CE95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492D81E0D158E0093CE95 /* ViewController.swift */; };
 		A7D492DC1E0D158E0093CE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D492DA1E0D158E0093CE95 /* Main.storyboard */; };
@@ -46,6 +47,8 @@
 		5983247EE471229DEC49BC63 /* Pods-模仿自动计数UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数UITests/Pods-模仿自动计数UITests.release.xcconfig"; sourceTree = "<group>"; };
 		5EB213BF5FE69EEB0FF1601B /* Pods-模仿自动计数.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数.release.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数/Pods-模仿自动计数.release.xcconfig"; sourceTree = "<group>"; };
 		86DE7ABB4004F81D279640DF /* Pods-模仿自动计数.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数.debug.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数/Pods-模仿自动计数.debug.xcconfig"; sourceTree = "<group>"; };
+		A7C614C71E0E132300896E77 /* Extention.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
+		A7C614C91E0E216900896E77 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A7D492D31E0D158E0093CE95 /* 模仿自动计数.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模仿自动计数.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D492D61E0D158E0093CE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D492D81E0D158E0093CE95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -64,7 +67,6 @@
 		A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Hex.m"; sourceTree = "<group>"; };
 		A7D4930A1E0D1CD00093CE95 /* NSNumber+GetNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNumber+GetNumber.h"; sourceTree = "<group>"; };
 		A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSNumber+GetNumber.m"; sourceTree = "<group>"; };
-		A7D4930D1E0D1E410093CE95 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		AE33E8F5A10A20DEDD09C36D /* Pods-模仿自动计数UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数UITests/Pods-模仿自动计数UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		DB8B15328FC57C951E20792F /* Pods-模仿自动计数Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-模仿自动计数Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-模仿自动计数Tests/Pods-模仿自动计数Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -137,15 +139,16 @@
 			children = (
 				A7D492D61E0D158E0093CE95 /* AppDelegate.swift */,
 				A7D492D81E0D158E0093CE95 /* ViewController.swift */,
+				A7C614C71E0E132300896E77 /* Extention.swift */,
 				A7D492DA1E0D158E0093CE95 /* Main.storyboard */,
 				A7D492DD1E0D158E0093CE95 /* Assets.xcassets */,
 				A7D492DF1E0D158E0093CE95 /* LaunchScreen.storyboard */,
 				A7D492E21E0D158E0093CE95 /* Info.plist */,
+				A7C614C91E0E216900896E77 /* PrefixHeader.pch */,
 				A7D493071E0D1CB50093CE95 /* UIColor+Hex.h */,
 				A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */,
 				A7D4930A1E0D1CD00093CE95 /* NSNumber+GetNumber.h */,
 				A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */,
-				A7D4930D1E0D1E410093CE95 /* PrefixHeader.pch */,
 				A7D493061E0D1CB50093CE95 /* 模仿自动计数-Bridging-Header.h */,
 			);
 			path = "模仿自动计数";
@@ -468,6 +471,7 @@
 				A7D4930C1E0D1CD00093CE95 /* NSNumber+GetNumber.m in Sources */,
 				A7D493091E0D1CB50093CE95 /* UIColor+Hex.m in Sources */,
 				A7D492D71E0D158E0093CE95 /* AppDelegate.swift in Sources */,
+				A7C614C81E0E132300896E77 /* Extention.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,7 +634,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "模仿自动计数/模仿自动计数-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/** $(PODS_ROOT)";
 			};
 			name = Debug;
 		};
@@ -648,7 +652,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "模仿自动计数/模仿自动计数-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
-				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/** $(PODS_ROOT)";
 			};
 			name = Release;
 		};
