@@ -19,16 +19,15 @@ enum BtnTag : NSInteger {
 }
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     /**********************************/
     
     var count:NSInteger = 0
     let countLabel:UILabel = UILabel.init()
     let addBtn:UIButton = UIButton.init()
-
-    
-    
+    let tableView:UITableView = UITableView.init()
+    var dataSource:NSMutableArray = NSMutableArray.init(capacity: 1)
     
     /**********************************/
     
@@ -36,7 +35,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.initUI()
+        initUI()
         
         
         
@@ -55,7 +54,7 @@ class ViewController: UIViewController {
         topView.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(0)
-            make.top.equalTo(0)
+            make.top.equalTo(20)
             make.height.equalTo(NSNumber.getTransNumberCompareHeight(450*Screen_Mul))
         }
         
@@ -147,6 +146,29 @@ class ViewController: UIViewController {
             make.height.equalTo(resetBtn.snp.height)
         }
         
+        
+        //  tableView
+        self.view.addSubview(tableView)
+        tableView.register(CountInfoCell.self, forCellReuseIdentifier: "cell")
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.backgroundColor = UIColor.clear
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        
+        tableView.snp.makeConstraints { (make) in
+            make.edges.equalTo(topView).inset(UIEdgeInsetsMake(0, 0, 0, 0))
+        }
+        
+        let countInfo:CountInfo = CountInfo()
+        countInfo.number = 0
+        countInfo.count = 0
+        countInfo.timeFrom = "0"
+        countInfo.timeTo = "1"
+        
+        dataSource.add(countInfo)
+        
+        
+        
     }
     
     
@@ -197,6 +219,41 @@ class ViewController: UIViewController {
         
         
     }
+    
+    
+    //  UITableViewDataSource
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell:CountInfoCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CountInfoCell
+        
+        cell.configInfo(countInfo: dataSource.firstObject as! CountInfo)
+        
+        return cell
+    }
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1;
+    }
+    
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(NSNumber.getTransNumberCompareHeight(130*Screen_Mul))
+    }
+    
+    
+    //  UITableViewDelegate
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+    }
+    
+    
+    
+    
     
     
     override func didReceiveMemoryWarning() {
