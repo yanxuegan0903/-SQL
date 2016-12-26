@@ -154,7 +154,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none
-        
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(topView).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
@@ -165,7 +164,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         countInfo.timeFrom = "0"
         countInfo.timeTo = "1"
         
-        dataSource.add(countInfo)
+        
+        
         
         
         
@@ -252,7 +252,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
+    //  归档
+    func Archiver(countInfo:CountInfo) {
+        
+        NSKeyedArchiver.archiveRootObject(countInfo, toFile: )
+    }
     
     
     

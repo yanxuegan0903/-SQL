@@ -5,5 +5,7 @@
 #import "UIColor+Hex.h"
 #import "NSNumber+GetNumber.h"
 #import "PrefixHeader.pch"
+#import "FMDB.h"
+
 
 #define Screen_Mul 1.50

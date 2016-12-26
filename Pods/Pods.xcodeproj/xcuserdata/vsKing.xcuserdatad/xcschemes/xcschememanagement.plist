@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>FMDB.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-模仿自动计数.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2DF879835FB9F2C89A5714F7BC18A70E</key>
+		<key>251BAD17812F7EBF6532EACF66F941C3</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4374C996ADC1E5564EB79F95E4BBDF73</key>
+		<key>2DF879835FB9F2C89A5714F7BC18A70E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +47,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6100F1C820069DCBC1AC76758BA17169</key>
+		<key>5CB7A38F084D85CDBF9C40EA60E4D365</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CDC805F8086BDCB336BE9022EE8D75C9</key>
 		<dict>
 			<key>primary</key>
 			<true/>

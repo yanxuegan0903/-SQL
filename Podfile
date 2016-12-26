@@ -6,7 +6,7 @@ target '模仿自动计数' do
   use_frameworks!
 
   # Pods for 模仿自动计数
-
+  pod 'FMDB'
   pod 'SnapKit'
 
   target '模仿自动计数Tests' do

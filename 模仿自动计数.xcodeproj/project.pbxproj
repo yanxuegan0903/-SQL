@@ -11,6 +11,8 @@
 		976EF425C02D53A5A54DBE2A /* Pods_______.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 137D6E2086FFEEAADE0FD526 /* Pods_______.framework */; };
 		A7C614CB1E0E650600896E77 /* CountInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C614CA1E0E650600896E77 /* CountInfoCell.swift */; };
 		A7D120AA1E10B947000835F3 /* CountInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D120A91E10B947000835F3 /* CountInfo.swift */; };
+		A7D120AC1E10FDFC000835F3 /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A7D120AB1E10FDFC000835F3 /* libsqlite3.0.tbd */; };
+		A7D120AF1E11027A000835F3 /* SQLiteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D120AE1E11027A000835F3 /* SQLiteManager.swift */; };
 		A7D492D71E0D158E0093CE95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492D61E0D158E0093CE95 /* AppDelegate.swift */; };
 		A7D492D91E0D158E0093CE95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D492D81E0D158E0093CE95 /* ViewController.swift */; };
 		A7D492DC1E0D158E0093CE95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7D492DA1E0D158E0093CE95 /* Main.storyboard */; };
@@ -51,6 +53,8 @@
 		A7C614C91E0E216900896E77 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		A7C614CA1E0E650600896E77 /* CountInfoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountInfoCell.swift; sourceTree = "<group>"; };
 		A7D120A91E10B947000835F3 /* CountInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountInfo.swift; sourceTree = "<group>"; };
+		A7D120AB1E10FDFC000835F3 /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		A7D120AE1E11027A000835F3 /* SQLiteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SQLiteManager.swift; sourceTree = "<group>"; };
 		A7D492D31E0D158E0093CE95 /* 模仿自动计数.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "模仿自动计数.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7D492D61E0D158E0093CE95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A7D492D81E0D158E0093CE95 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7D120AC1E10FDFC000835F3 /* libsqlite3.0.tbd in Frameworks */,
 				976EF425C02D53A5A54DBE2A /* Pods_______.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -114,6 +119,17 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A7D120AD1E11024E000835F3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A7D493071E0D1CB50093CE95 /* UIColor+Hex.h */,
+				A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */,
+				A7D4930A1E0D1CD00093CE95 /* NSNumber+GetNumber.h */,
+				A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */,
+			);
+			name = Category;
+			sourceTree = "<group>";
+		};
 		A7D492CA1E0D158E0093CE95 = {
 			isa = PBXGroup;
 			children = (
@@ -139,8 +155,10 @@
 		A7D492D51E0D158E0093CE95 /* 模仿自动计数 */ = {
 			isa = PBXGroup;
 			children = (
+				A7D120AD1E11024E000835F3 /* Category */,
 				A7D492D61E0D158E0093CE95 /* AppDelegate.swift */,
 				A7D492D81E0D158E0093CE95 /* ViewController.swift */,
+				A7D120AE1E11027A000835F3 /* SQLiteManager.swift */,
 				A7D120A91E10B947000835F3 /* CountInfo.swift */,
 				A7C614CA1E0E650600896E77 /* CountInfoCell.swift */,
 				A7D492DA1E0D158E0093CE95 /* Main.storyboard */,
@@ -148,10 +166,6 @@
 				A7D492DF1E0D158E0093CE95 /* LaunchScreen.storyboard */,
 				A7D492E21E0D158E0093CE95 /* Info.plist */,
 				A7C614C91E0E216900896E77 /* PrefixHeader.pch */,
-				A7D493071E0D1CB50093CE95 /* UIColor+Hex.h */,
-				A7D493081E0D1CB50093CE95 /* UIColor+Hex.m */,
-				A7D4930A1E0D1CD00093CE95 /* NSNumber+GetNumber.h */,
-				A7D4930B1E0D1CD00093CE95 /* NSNumber+GetNumber.m */,
 				A7D493061E0D1CB50093CE95 /* 模仿自动计数-Bridging-Header.h */,
 			);
 			path = "模仿自动计数";
@@ -178,6 +192,7 @@
 		C249F00956D10AE6F4B7E38C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A7D120AB1E10FDFC000835F3 /* libsqlite3.0.tbd */,
 				137D6E2086FFEEAADE0FD526 /* Pods_______.framework */,
 				49B45C176065AD7657DC2822 /* Pods_______Tests.framework */,
 				00D64D09A29668B8F364B200 /* Pods_______UITests.framework */,
@@ -474,6 +489,7 @@
 				A7D4930C1E0D1CD00093CE95 /* NSNumber+GetNumber.m in Sources */,
 				A7D493091E0D1CB50093CE95 /* UIColor+Hex.m in Sources */,
 				A7C614CB1E0E650600896E77 /* CountInfoCell.swift in Sources */,
+				A7D120AF1E11027A000835F3 /* SQLiteManager.swift in Sources */,
 				A7D492D71E0D158E0093CE95 /* AppDelegate.swift in Sources */,
 				A7D120AA1E10B947000835F3 /* CountInfo.swift in Sources */,
 			);
