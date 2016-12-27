@@ -155,11 +155,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         //  tableView
         self.view.addSubview(tableView)
-        tableView.register(CountInfoCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(CountInfoCell.classForCoder(), forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
         tableView.backgroundColor = UIColor.clear
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(topView).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
@@ -242,6 +242,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     //  UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        print("dataSourceCount = ",dataSource.count)
+        
         return dataSource.count
     }
     
