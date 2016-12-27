@@ -42,7 +42,7 @@ class SQLiteManager: NSObject {
     
     //  创建表
     func createTable() -> Void {
-        let sql = "create table IF NOT EXISTS CountInfo(id integer primary key autoincrement,countInfo data )"
+        let sql = "create table IF NOT EXISTS CountInfo(id integer primary key autoincrement,number int, count int, timeFrom string, timeTo string)"
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
             print("创建表格成功")
@@ -63,8 +63,8 @@ class SQLiteManager: NSObject {
     }
     
     //  插入数据
-    func insertData(data:Data) -> Void {
-        let sql = String.init(format: "insert into CountInfo (countInfo) values (?)", data as CVarArg )
+    func insertData(countInfo:CountInfo) -> Void {
+        let sql = String.init(format: "insert into CountInfo (number,count,timeFrom,timeTo) values (%d,%d,%@,%@)", countInfo.number,countInfo.count,countInfo.timeFrom,countInfo.timeTo)
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
             print("插入数据成功")
@@ -81,13 +81,14 @@ class SQLiteManager: NSObject {
         
         while (resultSet?.next())! {
             
-            let data:Data = (resultSet!.data(forColumn: "data"))!
+            let id = resultSet?.int(forColumn: "id")
+            let number = resultSet?.int(forColumn: "number")
+            let count = resultSet?.int(forColumn: "count")
+            let timeFrom:String = (resultSet?.string(forColumn: "timeFrom"))!
+            let timeTo:String = (resultSet?.string(forColumn: "timeTo"))!
             
-            let countInfo:CountInfo = NSKeyedUnarchiver.unarchiveObject(with: data) as! CountInfo
-            
-            print("number = %d,count = %d,timeFrom = %@,timeTo = %@",countInfo.number,countInfo.count,countInfo.timeFrom,countInfo.timeTo)
+            print("id = ",id!,"number = ",number!,"count = ",count!,"timeFrom = ",timeFrom,"timeTo = ",timeTo)
 
-            
         }
         
         

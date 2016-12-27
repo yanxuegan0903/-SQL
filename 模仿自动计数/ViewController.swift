@@ -164,9 +164,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         countInfo.timeFrom = "0"
         countInfo.timeTo = "1"
         
-        let data:Data = NSKeyedArchiver.archivedData(withRootObject: countInfo)
-        
-        SQLiteManager.shareInstance.insertData(data: data)
+        SQLiteManager.shareInstance.insertData(countInfo: countInfo)
         
         SQLiteManager.shareInstance.quaryData()
         
