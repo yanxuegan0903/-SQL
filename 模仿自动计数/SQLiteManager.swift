@@ -13,6 +13,7 @@ class SQLiteManager: NSObject {
     
     //  单例 
     static let shareInstance = SQLiteManager()
+  
     
     lazy var db:FMDatabase = {
         
@@ -29,8 +30,11 @@ class SQLiteManager: NSObject {
     //实例化db对象的时候就会默认打开或创建一个数据库
     override init() {
         super.init()
+        
         if db.open(){
             print("打开数据库成功")
+        }else {
+            print("打开数据库失败")
         }
         
         createTable()
@@ -38,10 +42,12 @@ class SQLiteManager: NSObject {
     
     //  创建表
     func createTable() -> Void {
-        let sql = "create table  CountInfo(id integer primary key autoincrement,countInfo data)"
+        let sql = "create table IF NOT EXISTS CountInfo(id integer primary key autoincrement,countInfo data )"
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
             print("创建表格成功")
+        }else {
+            print("创建表格失败")
         }
     }
     
@@ -51,15 +57,19 @@ class SQLiteManager: NSObject {
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
             print("删除表格成功")
+        }else {
+            print("删除表格失败")
         }
     }
     
     //  插入数据
     func insertData(data:Data) -> Void {
-        let sql = String.init(format: "insert into CountInfo (countInfo) values (%@)", data as CVarArg)
+        let sql = String.init(format: "insert into CountInfo (countInfo) values (?)", data as CVarArg )
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
-            print("插入成功")
+            print("插入数据成功")
+        }else {
+            print("插入数据失败")
         }
     }
     
@@ -68,14 +78,19 @@ class SQLiteManager: NSObject {
         
         let sql = "select * from CountInfo"
         let resultSet = db.executeQuery(sql, withArgumentsIn: nil)
+        
         while (resultSet?.next())! {
-            let name = resultSet?.string(forColumn: "name")
-            let age = resultSet?.int(forColumn: "age")
-            let score = resultSet?.double(forColumn: "score")
             
-            print(name!)
-            print(age!)
-            print(score!)
+            let data:Data = (resultSet!.data(forColumn: "data"))!
+            
+            let countInfo:CountInfo = NSKeyedUnarchiver.unarchiveObject(with: data) as! CountInfo
+            
+            print("number = %d,count = %d,timeFrom = %@,timeTo = %@",countInfo.number,countInfo.count,countInfo.timeFrom,countInfo.timeTo)
+
+            
         }
+        
+        
+        
     }
 }

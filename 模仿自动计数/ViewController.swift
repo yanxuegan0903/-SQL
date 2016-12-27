@@ -164,10 +164,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         countInfo.timeFrom = "0"
         countInfo.timeTo = "1"
         
+        let data:Data = NSKeyedArchiver.archivedData(withRootObject: countInfo)
         
+        SQLiteManager.shareInstance.insertData(data: data)
         
-        
-        
+        SQLiteManager.shareInstance.quaryData()
         
     }
     
@@ -252,11 +253,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    //  归档
-    func Archiver(countInfo:CountInfo) {
-        
-        NSKeyedArchiver.archiveRootObject(countInfo, toFile: )
-    }
     
     
     
