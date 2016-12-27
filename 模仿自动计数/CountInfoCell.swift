@@ -82,7 +82,7 @@ class CountInfoCell: UITableViewCell {
     
     func configInfo(countInfo:CountInfo) {
         
-        numberLabel.text = String.init(format: "编号  %d", countInfo.number)
+        numberLabel.text = String.init(format: "编号  %d", countInfo.id)
         countLabel.text = String.init(format: "次数  %d", countInfo.count)
         timeLabel.text = String.init(format: "时间  %@ ~ %@", countInfo.timeFrom,countInfo.timeTo)
         

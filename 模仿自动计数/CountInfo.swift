@@ -11,14 +11,12 @@ import Foundation
 class CountInfo: NSObject, NSCoding {
     
     var id:NSInteger = NSInteger.init()
-    var number:Int = Int.init()
     var count:Int = Int.init()
     var timeFrom:String = String.init()
     var timeTo:String = String.init()
     
     
     func encode(with aCoder: NSCoder) {
-        aCoder.encode(number, forKey: "number")
         aCoder.encode(count, forKey: "count")
         aCoder.encode(timeFrom, forKey: "timeFrom")
         aCoder.encode(timeTo, forKey: "timeTo")
@@ -26,11 +24,19 @@ class CountInfo: NSObject, NSCoding {
     
     required init?(coder aDecoder: NSCoder) {
         super.init()
-        self.number = Int(aDecoder.decodeCInt(forKey: "number"))
         self.count = Int(aDecoder.decodeCInt(forKey: "count"))
         self.timeFrom = aDecoder.decodeObject(forKey: "timeFrom") as! String
         self.timeTo = aDecoder.decodeObject(forKey: "timeTo") as! String
         
+    }
+    
+    init(count:Int,timeFrom:String,timeTo:String) {
+        
+        super.init()
+        
+        self.count = count
+        self.timeTo = timeTo
+        self.timeFrom = timeFrom
     }
     
     override init() {

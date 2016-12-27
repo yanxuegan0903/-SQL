@@ -23,11 +23,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     /**********************************/
     
-    var count:NSInteger = 0
+    var count:Int = 0
     let countLabel:UILabel = UILabel.init()
     let addBtn:UIButton = UIButton.init()
     let tableView:UITableView = UITableView.init()
     var dataSource:NSMutableArray = NSMutableArray.init(capacity: 1)
+    var timeFrom:String = String.init()
+    var timeTo:String = String.init()
+    
+    
+    
+    
     
     /**********************************/
     
@@ -157,16 +163,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(topView).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
+
+        dataSource = SQLiteManager.shareInstance.quaryData()
         
-        let countInfo:CountInfo = CountInfo()
-        countInfo.number = 0
-        countInfo.count = 0
-        countInfo.timeFrom = "0"
-        countInfo.timeTo = "1"
+        print(dataSource)
         
-        SQLiteManager.shareInstance.insertData(countInfo: countInfo)
+        tableView.reloadData()
         
-        SQLiteManager.shareInstance.quaryData()
         
     }
     
@@ -177,17 +180,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         switch sender.tag {
             case BtnTag.Minus.rawValue :
-                print("点击 减一 " + String.init(format: "tag = %d", sender.tag))
                 count -= 1
                 
                 
             break
             case BtnTag.Add.rawValue :
-                print("点击 加一 " + String.init(format: "tag = %d", sender.tag))
                 
                 if sender.isSelected {
                     count += 1
                 }else {
+                    
+                    let date:Date = Date()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateStyle = DateFormatter.Style.short
+                    timeFrom = dateFormatter.string(from: date)
+                    
                     sender.isSelected = true
                 }
                 
@@ -195,15 +202,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
             break
             case BtnTag.Reset.rawValue :
-                print("点击 重置 " + String.init(format: "tag = %d", sender.tag))
                 
                 count = 0
                 
                 
             break
             case BtnTag.TimesCount.rawValue :
-                print("点击 计次 " + String.init(format: "tag = %d", sender.tag))
                 addBtn.isSelected = false
+                
+                let date:Date = Date()
+                let dateFormatter = DateFormatter()
+                dateFormatter.dateStyle = DateFormatter.Style.short
+                timeTo = dateFormatter.string(from: date)
+                
+                
+                let countInfo:CountInfo = CountInfo.init(count: count, timeFrom: timeFrom, timeTo: timeTo)
+                
+                SQLiteManager.shareInstance.insertData(countInfo: countInfo)
+                
+                dataSource = SQLiteManager.shareInstance.quaryData()
+                
+                self.tableView.reloadData()
+                
                 count = 0
                 
             break
@@ -229,7 +249,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell:CountInfoCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CountInfoCell
         
-        cell.configInfo(countInfo: dataSource.firstObject as! CountInfo)
+        let cI:CountInfo = dataSource[indexPath.row] as! CountInfo
+        
+        cell.configInfo(countInfo: cI)
+        
+        
+        
+        
+        
+        
         
         return cell
     }
