@@ -23,13 +23,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     /**********************************/
     
-    var count:Int = 0
-    let countLabel:UILabel = UILabel.init()
-    let addBtn:UIButton = UIButton.init()
-    let tableView:UITableView = UITableView.init()
-    var dataSource:NSMutableArray = NSMutableArray.init(capacity: 1)
-    var timeFrom:String = String.init()
-    var timeTo:String = String.init()
+    var _count:Int = 0
+    let _countLabel:UILabel = UILabel.init()
+    let _addBtn:UIButton = UIButton.init()
+    let _tableView:UITableView = UITableView.init()
+    var _dataSource:NSMutableArray = NSMutableArray.init(capacity: 1)
+    var _timeFrom:String = String.init()
+    var _timeTo:String = String.init()
     
     
     
@@ -65,14 +65,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         //  数量
-        self.view.addSubview(countLabel)
-        countLabel.backgroundColor = UIColor.init(hex: 0xb1b4ba)
-        countLabel.textColor = UIColor.init(hex: 0x323232)
-        countLabel.font = UIFont.init(name: "Times", size: 70)
-        countLabel.text = String.init(format: "%d", count)
-        countLabel.textAlignment = NSTextAlignment.center
+        self.view.addSubview(_countLabel)
+        _countLabel.backgroundColor = UIColor.init(hex: 0xb1b4ba)
+        _countLabel.textColor = UIColor.init(hex: 0x323232)
+        _countLabel.font = UIFont.init(name: "Times", size: 70)
+        _countLabel.text = String.init(format: "%d", _count)
+        _countLabel.textAlignment = NSTextAlignment.center
         
-        countLabel.snp.makeConstraints { (make) in
+        _countLabel.snp.makeConstraints { (make) in
             make.left.equalTo(0)
             make.right.equalTo(0)
             make.top.equalTo(topView.snp.bottom).offset(NSNumber.getTransNumberCompareHeight(10*Screen_Mul))
@@ -94,22 +94,22 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         minusBtn.snp.makeConstraints { (make) in
             make.left.equalTo(NSNumber.getTransNumberCompareWidth(8*Screen_Mul))
             make.right.equalTo(self.view.snp.centerX).offset(-NSNumber.getTransNumberCompareWidth(8*Screen_Mul))
-            make.top.equalTo(countLabel.snp.bottom).offset(NSNumber.getTransNumberCompareHeight(18*Screen_Mul))
+            make.top.equalTo(_countLabel.snp.bottom).offset(NSNumber.getTransNumberCompareHeight(18*Screen_Mul))
             make.height.equalTo(NSNumber.getTransNumberCompareHeight(144*Screen_Mul))
         }
         
         //  加
-        self.view.addSubview(addBtn)
-        addBtn.backgroundColor = minusBtn.backgroundColor
-        addBtn.setTitle("开始", for: UIControlState.normal)
-        addBtn.setTitle("加一", for: UIControlState.selected)
-        addBtn.titleLabel?.font = minusBtn.titleLabel?.font
-        addBtn.setTitleColor(UIColor.init(hex: 0x28e2f9), for: UIControlState.normal)
-        addBtn.setTitleColor(UIColor.black, for: UIControlState.selected)
-        addBtn.tag = BtnTag.Add.rawValue
-        addBtn.addTarget(self , action: #selector(clickBtn(sender:)), for: UIControlEvents.touchUpInside)
+        self.view.addSubview(_addBtn)
+        _addBtn.backgroundColor = minusBtn.backgroundColor
+        _addBtn.setTitle("开始", for: UIControlState.normal)
+        _addBtn.setTitle("加一", for: UIControlState.selected)
+        _addBtn.titleLabel?.font = minusBtn.titleLabel?.font
+        _addBtn.setTitleColor(UIColor.init(hex: 0x28e2f9), for: UIControlState.normal)
+        _addBtn.setTitleColor(UIColor.black, for: UIControlState.selected)
+        _addBtn.tag = BtnTag.Add.rawValue
+        _addBtn.addTarget(self , action: #selector(clickBtn(sender:)), for: UIControlEvents.touchUpInside)
         
-        addBtn.snp.makeConstraints { (make) in
+        _addBtn.snp.makeConstraints { (make) in
             make.right.equalTo(-NSNumber.getTransNumberCompareWidth(8*Screen_Mul))
             make.left.equalTo(self.view.snp.centerX).offset(NSNumber.getTransNumberCompareWidth(8*Screen_Mul))
             make.top.equalTo(minusBtn.snp.top)
@@ -146,29 +146,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         timesCountBtn.addTarget(self , action: #selector(clickBtn(sender:)), for: UIControlEvents.touchUpInside)
         
         timesCountBtn.snp.makeConstraints { (make) in
-            make.left.equalTo(addBtn.snp.left)
-            make.right.equalTo(addBtn.snp.right)
+            make.left.equalTo(_addBtn.snp.left)
+            make.right.equalTo(_addBtn.snp.right)
             make.top.equalTo(resetBtn.snp.top)
             make.height.equalTo(resetBtn.snp.height)
         }
         
         
         //  tableView
-        self.view.addSubview(tableView)
-        tableView.register(CountInfoCell.classForCoder(), forCellReuseIdentifier: "cell")
-        tableView.delegate = self
-        tableView.dataSource = self
-        tableView.backgroundColor = UIColor.clear
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
-        tableView.snp.makeConstraints { (make) in
+        self.view.addSubview(_tableView)
+        _tableView.register(CountInfoCell.classForCoder(), forCellReuseIdentifier: "cell")
+        _tableView.delegate = self
+        _tableView.dataSource = self
+        _tableView.backgroundColor = UIColor.clear
+        _tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine
+        _tableView.snp.makeConstraints { (make) in
             make.edges.equalTo(topView).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
 
-        dataSource = SQLiteManager.shareInstance.quaryData()
+        _dataSource = SQLiteManager.shareInstance.quaryData()
         
-        print(dataSource)
         
-        tableView.reloadData()
+        _tableView.reloadData()
         
         
     }
@@ -180,20 +179,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         switch sender.tag {
             case BtnTag.Minus.rawValue :
-                count -= 1
+                _count -= 1
                 
                 
             break
             case BtnTag.Add.rawValue :
                 
                 if sender.isSelected {
-                    count += 1
+                    _count += 1
                 }else {
                     
                     let date:Date = Date()
                     let dateFormatter = DateFormatter()
                     dateFormatter.dateStyle = DateFormatter.Style.short
-                    timeFrom = dateFormatter.string(from: date)
+                    _timeFrom = dateFormatter.string(from: date)
                     
                     sender.isSelected = true
                 }
@@ -203,28 +202,28 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             break
             case BtnTag.Reset.rawValue :
                 
-                count = 0
+                _count = 0
                 
                 
             break
             case BtnTag.TimesCount.rawValue :
-                addBtn.isSelected = false
+                _addBtn.isSelected = false
                 
                 let date:Date = Date()
                 let dateFormatter = DateFormatter()
                 dateFormatter.dateStyle = DateFormatter.Style.short
-                timeTo = dateFormatter.string(from: date)
+                _timeTo = dateFormatter.string(from: date)
                 
                 
-                let countInfo:CountInfo = CountInfo.init(count: count, timeFrom: timeFrom, timeTo: timeTo)
+                let countInfo:CountInfo = CountInfo.init(count: _count, timeFrom: _timeFrom, timeTo: _timeTo)
                 
                 SQLiteManager.shareInstance.insertData(countInfo: countInfo)
                 
-                dataSource = SQLiteManager.shareInstance.quaryData()
+                _dataSource = SQLiteManager.shareInstance.quaryData()
                 
-                self.tableView.reloadData()
+                _tableView.reloadData()
                 
-                count = 0
+                _count = 0
                 
             break
             
@@ -234,7 +233,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         }
         
         
-        countLabel.text = String.init(format: "%d", count)
+        _countLabel.text = String.init(format: "%d", _count)
         
         
     }
@@ -243,16 +242,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //  UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("dataSourceCount = ",dataSource.count)
+        print("dataSourceCount = ",_dataSource.count)
         
-        return dataSource.count
+        return _dataSource.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell:CountInfoCell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CountInfoCell
         
-        let cI:CountInfo = dataSource[indexPath.row] as! CountInfo
+        let cI:CountInfo = _dataSource[indexPath.row] as! CountInfo
         
         cell.configInfo(countInfo: cI)
         
