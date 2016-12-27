@@ -41,7 +41,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        initUI()
+        self.initUI()
         
         
         
@@ -242,7 +242,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     //  UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        print("dataSourceCount = ",_dataSource.count)
         
         return _dataSource.count
     }
@@ -254,12 +253,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cI:CountInfo = _dataSource[indexPath.row] as! CountInfo
         
         cell.configInfo(countInfo: cI)
-        
-        
-        
-        
-        
-        
+      
         
         return cell
     }

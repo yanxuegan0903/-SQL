@@ -8,9 +8,6 @@
 
 import Foundation
 
-let numberLabel:UILabel = UILabel.init()
-let countLabel:UILabel = UILabel.init()
-let timeLabel:UILabel = UILabel.init()
 
 
 
@@ -19,6 +16,12 @@ let timeLabel:UILabel = UILabel.init()
 
 
 class CountInfoCell: UITableViewCell {
+    
+    let numberLabel:UILabel = UILabel.init()
+    let countLabel:UILabel = UILabel.init()
+    let timeLabel:UILabel = UILabel.init()
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -26,7 +29,7 @@ class CountInfoCell: UITableViewCell {
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        initUI()
+        self.initUI()
         
     }
     
