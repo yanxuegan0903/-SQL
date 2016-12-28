@@ -102,9 +102,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         self.view.addSubview(_addBtn)
         _addBtn.backgroundColor = minusBtn.backgroundColor
         _addBtn.setTitle("开始", for: UIControlState.normal)
+        _addBtn.setTitle("加一", for: UIControlState.highlighted)
         _addBtn.setTitle("加一", for: UIControlState.selected)
         _addBtn.setTitleColor(UIColor.init(hex: 0x28e2f9), for: UIControlState.normal)
         _addBtn.setTitleColor(UIColor.black, for: UIControlState.selected)
+        _addBtn.setTitleColor(UIColor.black, for: UIControlState.highlighted)
         _addBtn.titleLabel?.font = minusBtn.titleLabel?.font
         _addBtn.tag = BtnTag.Add.rawValue
         _addBtn.addTarget(self , action: #selector(clickBtn(sender:)), for: UIControlEvents.touchUpInside)
@@ -164,16 +166,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             make.edges.equalTo(topView).inset(UIEdgeInsetsMake(0, 0, 0, 0))
         }
 
-        _dataSource = SQLiteManager.shareInstance.quaryData()
         
         
-        _tableView.reloadData()
         
-        if _dataSource.count>0 {
-            _tableView.scrollToRow(at: IndexPath.init(row: _dataSource.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
-        }
+        
+        refreshDataSource()
+        
+        
     }
-    
     
     
     //  按钮点击事件
@@ -222,13 +222,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     
                     SQLiteManager.shareInstance.insertData(countInfo: countInfo)
                     
-                    _dataSource = SQLiteManager.shareInstance.quaryData()
-                    
-                    _tableView.reloadData()
-                    
-                    if _dataSource.count>0 {
-                        _tableView.scrollToRow(at: IndexPath.init(row: _dataSource.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
-                    }
+                    refreshDataSource()
                     
                     _count = 0
 
@@ -261,9 +255,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cI:CountInfo = _dataSource[indexPath.row] as! CountInfo
         
-        
         cell.configInfo(countInfo: cI)
-      
         
         return cell
     }
@@ -285,7 +277,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     
-    
+    //  刷新数据
+    func refreshDataSource() {
+        _dataSource = SQLiteManager.shareInstance.quaryData()
+        
+        _tableView.reloadData()
+        
+        if _dataSource.count>0 {
+            _tableView.scrollToRow(at: IndexPath.init(row: _dataSource.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
+        }
+
+    }
     
     
     override func didReceiveMemoryWarning() {

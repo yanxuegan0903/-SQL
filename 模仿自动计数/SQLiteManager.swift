@@ -104,4 +104,32 @@ class SQLiteManager: NSObject {
         return countArray
         
     }
+    
+    
+    func clearAllData() {
+        
+        let sql = "DELETE FROM CountInfo"
+        let result = db.executeUpdate(sql, withArgumentsIn: nil)
+        if result {
+            print("清除所有数据成功")
+        }else {
+            print("清除所有数据失败")
+        }
+        
+    }
+    
+    func delete(ID:NSInteger) {
+        let sql = "DELETE FROM CountInfo WHERE id = \(ID)"
+        let result = db.executeUpdate(sql, withArgumentsIn: nil)
+        if result {
+            print("清除 ID = \(ID) 这条数据成功")
+        }else {
+            print("清除 ID = \(ID) 这条数据失败")
+        }
+        
+    }
+    
+    
+    
+    
 }
