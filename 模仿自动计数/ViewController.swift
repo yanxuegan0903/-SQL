@@ -272,9 +272,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     //  UITableViewDelegate
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "删除"
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! CountInfoCell
+        
+        let ID = NSInteger.init(cell.numberLabel.text!.components(separatedBy: "  ").last!)
+        
+        if (ID != nil) {
+            let result = SQLiteManager.shareInstance.delete(ID: ID!)
+            
+            if result {
+                _dataSource.removeObject(at: indexPath.row)
+                tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.right)
+            }
+        }
+        
+        
+    }
+    
+    
     
     
     //  刷新数据

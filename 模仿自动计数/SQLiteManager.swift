@@ -118,15 +118,17 @@ class SQLiteManager: NSObject {
         
     }
     
-    func delete(ID:NSInteger) {
+    func delete(ID:NSInteger) -> Bool {
         let sql = "DELETE FROM CountInfo WHERE id = \(ID)"
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
             print("清除 ID = \(ID) 这条数据成功")
+            return true
         }else {
             print("清除 ID = \(ID) 这条数据失败")
         }
         
+        return false
     }
     
     
