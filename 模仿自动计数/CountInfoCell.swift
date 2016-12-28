@@ -43,12 +43,13 @@ class CountInfoCell: UITableViewCell {
         numberLabel.text = "编号"
         numberLabel.textColor = UIColor.black
         numberLabel.textAlignment = NSTextAlignment.left
+        numberLabel.font = UIFont.systemFont(ofSize: 12)
         numberLabel.sizeToFit()
         numberLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp.left).offset(NSNumber.getTransNumberCompareWidth(30*Screen_Mul))
             make.right.equalTo(self.contentView.snp.centerX).offset(-NSNumber.getTransNumberCompareWidth(30*Screen_Mul))
             make.top.equalTo(self.contentView.snp.top).offset(NSNumber.getTransNumberCompareHeight(5*Screen_Mul))
-            make.height.equalTo(NSNumber.getTransNumberCompareHeight(55*Screen_Mul))
+            make.height.equalTo(NSNumber.getTransNumberCompareHeight(30*Screen_Mul))
         }
         
         
@@ -57,6 +58,7 @@ class CountInfoCell: UITableViewCell {
         countLabel.text = "次数"
         countLabel.textColor = numberLabel.textColor
         countLabel.textAlignment = NSTextAlignment.left
+        countLabel.font = numberLabel.font
         countLabel.sizeToFit()
         countLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self.contentView.snp.centerX).offset(NSNumber.getTransNumberCompareWidth(30*Screen_Mul))
@@ -70,6 +72,7 @@ class CountInfoCell: UITableViewCell {
         timeLabel.text = "时间"
         timeLabel.textColor = numberLabel.textColor
         timeLabel.textAlignment = NSTextAlignment.left
+        timeLabel.font = numberLabel.font
         timeLabel.sizeToFit()
         timeLabel.snp.makeConstraints { (make) in
             make.left.equalTo(numberLabel.snp.left)
@@ -85,10 +88,17 @@ class CountInfoCell: UITableViewCell {
     
     func configInfo(countInfo:CountInfo) {
         
-        numberLabel.text = String.init(format: "编号  %d", countInfo.id)
-        countLabel.text = String.init(format: "次数  %d", countInfo.count)
-        timeLabel.text = String.init(format: "时间  %@ ~ %@", countInfo.timeFrom,countInfo.timeTo)
+        numberLabel.text = "编号  \(countInfo.id)"
+        countLabel.text = "次数  \(countInfo.count)"
         
+        let timeF = countInfo.timeFrom as NSString
+        let timeT = countInfo.timeTo as NSString
+        
+        timeLabel.text = "时间  \(timeF.substring(with: NSMakeRange(0, 4)))/\(timeF.substring(with: NSMakeRange(4, 2)))/\(timeF.substring(with: NSMakeRange(6, 2))) \(timeF.substring(with: NSMakeRange(8, 2))):\(timeF.substring(with: NSMakeRange(10, 2))):\(timeF.substring(with: NSMakeRange(12, 2))) ~ \(timeT.substring(with: NSMakeRange(0, 4)))/\(timeT.substring(with: NSMakeRange(4, 2)))/\(timeT.substring(with: NSMakeRange(6, 2))) \(timeT.substring(with: NSMakeRange(8, 2))):\(timeT.substring(with: NSMakeRange(10, 2))):\(timeT.substring(with: NSMakeRange(12, 2)))"
+        
+        
+        
+
     }
     
     

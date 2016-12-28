@@ -65,6 +65,9 @@ class SQLiteManager: NSObject {
     //  插入数据
     func insertData(countInfo:CountInfo) -> Void {
         let sql = String.init(format: "insert into CountInfo (count,timeFrom,timeTo) values (%d,%@,%@)",countInfo.count,countInfo.timeFrom,countInfo.timeTo)
+        
+        print("插入 SQL = ",sql)
+        
         let result = db.executeUpdate(sql, withArgumentsIn: nil)
         if result {
             print("插入数据成功")
@@ -87,6 +90,10 @@ class SQLiteManager: NSObject {
             let count = resultSet?.int(forColumn: "count")
             let timeFrom:String = (resultSet?.string(forColumn: "timeFrom"))!
             let timeTo:String = (resultSet?.string(forColumn: "timeTo"))!
+            
+            
+            print("timeFrom = ",timeFrom,",","timeTo = ",timeTo)
+            
             
             let countInfo:CountInfo = CountInfo()
             countInfo.id = NSInteger.init(id!)

@@ -189,10 +189,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     _count += 1
                 }else {
                     
-                    let date:Date = Date()
+                    let date:NSDate = NSDate()
                     let dateFormatter = DateFormatter()
-                    dateFormatter.dateStyle = DateFormatter.Style.short
-                    _timeFrom = dateFormatter.string(from: date)
+                    dateFormatter.dateFormat = "yyyyMMddHHmmss"
+                    _timeFrom = dateFormatter.string(from: date as Date)
                     
                     sender.isSelected = true
                 }
@@ -207,23 +207,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 
             break
             case BtnTag.TimesCount.rawValue :
-                _addBtn.isSelected = false
                 
-                let date:Date = Date()
-                let dateFormatter = DateFormatter()
-                dateFormatter.dateStyle = DateFormatter.Style.short
-                _timeTo = dateFormatter.string(from: date)
-                
-                
-                let countInfo:CountInfo = CountInfo.init(count: _count, timeFrom: _timeFrom, timeTo: _timeTo)
-                
-                SQLiteManager.shareInstance.insertData(countInfo: countInfo)
-                
-                _dataSource = SQLiteManager.shareInstance.quaryData()
-                
-                _tableView.reloadData()
-                
-                _count = 0
+                if _addBtn.isSelected {
+                    _addBtn.isSelected = false
+                    
+                    let date:NSDate = NSDate()
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "yyyyMMddHHmmss"
+                    _timeTo = dateFormatter.string(from: date as Date)
+                    
+                    let countInfo:CountInfo = CountInfo.init(count: _count, timeFrom: _timeFrom, timeTo: _timeTo)
+                    
+                    SQLiteManager.shareInstance.insertData(countInfo: countInfo)
+                    
+                    _dataSource = SQLiteManager.shareInstance.quaryData()
+                    
+                    _tableView.reloadData()
+                    
+                    _count = 0
+
+                }
                 
             break
             
@@ -252,6 +255,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cI:CountInfo = _dataSource[indexPath.row] as! CountInfo
         
+        
         cell.configInfo(countInfo: cI)
       
         
@@ -265,7 +269,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(NSNumber.getTransNumberCompareHeight(130*Screen_Mul))
+        return CGFloat(NSNumber.getTransNumberCompareHeight(80*Screen_Mul))
     }
     
     
