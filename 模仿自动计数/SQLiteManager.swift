@@ -91,10 +91,6 @@ class SQLiteManager: NSObject {
             let timeFrom:String = (resultSet?.string(forColumn: "timeFrom"))!
             let timeTo:String = (resultSet?.string(forColumn: "timeTo"))!
             
-            
-            print("timeFrom = ",timeFrom,",","timeTo = ",timeTo)
-            
-            
             let countInfo:CountInfo = CountInfo()
             countInfo.id = NSInteger.init(id!)
             countInfo.count = Int.init(count!)

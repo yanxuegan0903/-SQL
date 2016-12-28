@@ -169,7 +169,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         _tableView.reloadData()
         
-        
+        if _dataSource.count>0 {
+            _tableView.scrollToRow(at: IndexPath.init(row: _dataSource.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
+        }
     }
     
     
@@ -223,6 +225,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                     _dataSource = SQLiteManager.shareInstance.quaryData()
                     
                     _tableView.reloadData()
+                    
+                    if _dataSource.count>0 {
+                        _tableView.scrollToRow(at: IndexPath.init(row: _dataSource.count-1, section: 0), at: UITableViewScrollPosition.bottom, animated: true)
+                    }
                     
                     _count = 0
 
