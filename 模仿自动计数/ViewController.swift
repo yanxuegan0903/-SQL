@@ -103,9 +103,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         _addBtn.backgroundColor = minusBtn.backgroundColor
         _addBtn.setTitle("开始", for: UIControlState.normal)
         _addBtn.setTitle("加一", for: UIControlState.selected)
-        _addBtn.titleLabel?.font = minusBtn.titleLabel?.font
         _addBtn.setTitleColor(UIColor.init(hex: 0x28e2f9), for: UIControlState.normal)
         _addBtn.setTitleColor(UIColor.black, for: UIControlState.selected)
+        _addBtn.titleLabel?.font = minusBtn.titleLabel?.font
         _addBtn.tag = BtnTag.Add.rawValue
         _addBtn.addTarget(self , action: #selector(clickBtn(sender:)), for: UIControlEvents.touchUpInside)
         

@@ -91,10 +91,23 @@ class CountInfoCell: UITableViewCell {
         numberLabel.text = "编号  \(countInfo.id)"
         countLabel.text = "次数  \(countInfo.count)"
         
-        let timeF = countInfo.timeFrom as NSString
-        let timeT = countInfo.timeTo as NSString
+//        let timeF = countInfo.timeFrom as NSString
+//        let timeT = countInfo.timeTo as NSString
         
-        timeLabel.text = "时间  \(timeF.substring(with: NSMakeRange(0, 4)))/\(timeF.substring(with: NSMakeRange(4, 2)))/\(timeF.substring(with: NSMakeRange(6, 2))) \(timeF.substring(with: NSMakeRange(8, 2))):\(timeF.substring(with: NSMakeRange(10, 2))):\(timeF.substring(with: NSMakeRange(12, 2))) ~ \(timeT.substring(with: NSMakeRange(0, 4)))/\(timeT.substring(with: NSMakeRange(4, 2)))/\(timeT.substring(with: NSMakeRange(6, 2))) \(timeT.substring(with: NSMakeRange(8, 2))):\(timeT.substring(with: NSMakeRange(10, 2))):\(timeT.substring(with: NSMakeRange(12, 2)))"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyyMMddHHmmss"
+        let dateF = dateFormatter.date(from: countInfo.timeFrom)
+        let dateT = dateFormatter.date(from: countInfo.timeTo)
+        let timeInterval = dateT?.timeIntervalSince(dateF!)
+        
+        
+        let hour:Int = Int.init(timeInterval!/(60*60))
+        let min:Int = Int.init( (timeInterval! - Double.init(hour)*60*60) / 60 )
+        let sec:Int = Int.init((timeInterval! - Double.init(hour)*60*60 - Double.init(min)*60))
+        timeLabel.text = "用时  \(hour) : \(min) : \(sec)"
+        
+        
+//        timeLabel.text = "时间  \(timeF.substring(with: NSMakeRange(0, 4)))/\(timeF.substring(with: NSMakeRange(4, 2)))/\(timeF.substring(with: NSMakeRange(6, 2))) \(timeF.substring(with: NSMakeRange(8, 2))):\(timeF.substring(with: NSMakeRange(10, 2))):\(timeF.substring(with: NSMakeRange(12, 2))) ~ \(timeT.substring(with: NSMakeRange(0, 4)))/\(timeT.substring(with: NSMakeRange(4, 2)))/\(timeT.substring(with: NSMakeRange(6, 2))) \(timeT.substring(with: NSMakeRange(8, 2))):\(timeT.substring(with: NSMakeRange(10, 2))):\(timeT.substring(with: NSMakeRange(12, 2)))"
         
         
         
